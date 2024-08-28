@@ -10,7 +10,7 @@ public class Unreal5_Portfolio : ModuleRules
 
 		PublicIncludePaths.Add(System.IO.Path.Combine(ModuleDirectory, ""));
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "NavigationSystem", "AIModule" , "EnhancedInput", "Paper2D", "MotionWarping", "Slate", "SlateCore", "MovieScene", "LevelSequence", "UMG"});
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "NavigationSystem", "AIModule" , "EnhancedInput", "Paper2D", "MotionWarping", "Slate", "SlateCore", "MovieScene", "LevelSequence", "UMG", "GameplayTags"});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
