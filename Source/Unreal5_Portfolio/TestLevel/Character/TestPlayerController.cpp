@@ -9,6 +9,7 @@
 #include "InputMappingContext.h"
 #include "Global/DataAssets/InputDatas.h"
 #include "TestCharacter.h"
+#include "Global/ContentsEnum.h"
 
 ATestPlayerController::ATestPlayerController()
 {
@@ -50,23 +51,22 @@ void ATestPlayerController::SetupInputComponent()
 
 	if (nullptr != InputData->InputMapping)
 	{
-		EnhancedInputComponent->BindAction(InputData->Actions[0], ETriggerEvent::Triggered, this, &ATestPlayerController::MouseRotation);
-		EnhancedInputComponent->BindAction(InputData->Actions[3], ETriggerEvent::Triggered, this, &ATestPlayerController::D_MoveRight);
-		EnhancedInputComponent->BindAction(InputData->Actions[4], ETriggerEvent::Triggered, this, &ATestPlayerController::A_MoveLeft);
-		EnhancedInputComponent->BindAction(InputData->Actions[1], ETriggerEvent::Triggered, this, &ATestPlayerController::W_MoveFront);
-		EnhancedInputComponent->BindAction(InputData->Actions[2], ETriggerEvent::Triggered, this, &ATestPlayerController::S_MoveBack);
-		EnhancedInputComponent->BindAction(InputData->Actions[7], ETriggerEvent::Triggered, this, &ATestPlayerController::Num_ChangePosture, 0);
-		EnhancedInputComponent->BindAction(InputData->Actions[8], ETriggerEvent::Triggered, this, &ATestPlayerController::Num_ChangePosture, 1);
-		//EnhancedInputComponent->BindAction(InputData->Actions[9], ETriggerEvent::Triggered, this, &ATestPlayerController::Num_ChangePosture, 2);
-		EnhancedInputComponent->BindAction(InputData->Actions[9], ETriggerEvent::Triggered, this, &ATestPlayerController::Num_Drink);
-		EnhancedInputComponent->BindAction(InputData->Actions[10], ETriggerEvent::Started, this, &ATestPlayerController::Num_BombSetStart);
-		EnhancedInputComponent->BindAction(InputData->Actions[10], ETriggerEvent::Triggered, this, &ATestPlayerController::Num_BombSetTick);
-		EnhancedInputComponent->BindAction(InputData->Actions[10], ETriggerEvent::Completed, this, &ATestPlayerController::Num_BombSetEnd);
-		EnhancedInputComponent->BindAction(InputData->Actions[12], ETriggerEvent::Triggered, this, &ATestPlayerController::Num_ChangePosture, -1);
-		EnhancedInputComponent->BindAction(InputData->Actions[13], ETriggerEvent::Started, this, &ATestPlayerController::E_CheckItem);
-		EnhancedInputComponent->BindAction(InputData->Actions[14], ETriggerEvent::Started, this, &ATestPlayerController::P_ChangePOVController);
-		EnhancedInputComponent->BindAction(InputData->Actions[15], ETriggerEvent::Started, this, &ATestPlayerController::LCtrl_Crouch);
-		EnhancedInputComponent->BindAction(InputData->Actions[16], ETriggerEvent::Started, this, &ATestPlayerController::R_Reload);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::Mouse_Rotation)], ETriggerEvent::Triggered, this, &ATestPlayerController::MouseRotation);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_D)],		ETriggerEvent::Triggered, this, &ATestPlayerController::D_MoveRight);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_A)],		ETriggerEvent::Triggered, this, &ATestPlayerController::A_MoveLeft);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_W)],		ETriggerEvent::Triggered, this, &ATestPlayerController::W_MoveFront);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_S)],		ETriggerEvent::Triggered, this, &ATestPlayerController::S_MoveBack);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_1)],		ETriggerEvent::Triggered, this, &ATestPlayerController::Num_ChangePosture, 0);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_2)],		ETriggerEvent::Triggered, this, &ATestPlayerController::Num_ChangePosture, 1);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_3)],		ETriggerEvent::Triggered, this, &ATestPlayerController::Num_Drink);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_4)],		ETriggerEvent::Started, this, &ATestPlayerController::Num_BombSetStart);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_4)],		ETriggerEvent::Triggered, this, &ATestPlayerController::Num_BombSetTick);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_4)],		ETriggerEvent::Completed, this, &ATestPlayerController::Num_BombSetEnd);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_0)],		ETriggerEvent::Triggered, this, &ATestPlayerController::Num_ChangePosture, -1);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_E)],		ETriggerEvent::Started, this, &ATestPlayerController::E_CheckItem);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_P)],		ETriggerEvent::Started, this, &ATestPlayerController::P_ChangePOVController);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_LCtrl)], ETriggerEvent::Started, this, &ATestPlayerController::LCtrl_Crouch);
+		EnhancedInputComponent->BindAction(InputData->Actions[StaticCast<int32>(EPlayerInput::KeyBoard_R)],		ETriggerEvent::Started, this, &ATestPlayerController::R_Reload);
 	}
 }
 

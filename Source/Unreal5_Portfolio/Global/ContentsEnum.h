@@ -7,6 +7,28 @@
 #include "ContentsEnum.generated.h"
 
 
+UENUM(BlueprintType)
+enum class EPlayerInput : uint8
+{
+	Mouse_Rotation = 0,
+
+	KeyBoard_W = 1,
+	KeyBoard_S = 2,
+	KeyBoard_D = 3,
+	KeyBoard_A = 4,
+
+	KeyBoard_1 = 7,
+	KeyBoard_2 = 8,
+	KeyBoard_3 = 9,
+	KeyBoard_4 = 10,
+	KeyBoard_0 = 12,
+
+	KeyBoard_E = 13,
+	KeyBoard_P = 14,
+	KeyBoard_LCtrl = 15,
+	KeyBoard_R = 16,
+};
+
 // Contents 전반적으로 사용하는 Enum class
 UENUM(BlueprintType)
 enum class EObjectType : uint8
