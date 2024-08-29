@@ -38,6 +38,15 @@ void ATestPlayerController::BeginPlay()
 	FGetItemToWidget.BindUObject(this, &ATestPlayerController::CallGetItemToWidget);
 }
 
+void ATestPlayerController::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	Super::EndPlay(EndPlayReason);
+
+	FCharacterToReload.Unbind();
+	FCharacterToFaint.Unbind();
+	FGetItemToWidget.Unbind();
+}
+
 void ATestPlayerController::SetupInputComponent()
 {
 	Super::SetupInputComponent();

@@ -24,6 +24,7 @@ public:
 	ATestPlayerController();
 protected:
 	void BeginPlay() override;
+	void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
 public:
 	// Delegate º¯¼ö
