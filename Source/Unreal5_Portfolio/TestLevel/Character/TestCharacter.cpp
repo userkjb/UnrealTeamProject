@@ -486,7 +486,10 @@ void ATestCharacter::PickUpItem(AItemBase* _Item)
 	ATestPlayerController* Con = Cast<ATestPlayerController>(GetController());
 	if (nullptr != Con)
 	{
-		Con->FGetItemToWidget.Execute();
+		if (true == Con->FGetItemToWidget.IsBound())
+		{
+			Con->FGetItemToWidget.Execute();
+		}
 	}
 }
 
@@ -1152,7 +1155,10 @@ void ATestCharacter::CharacterReload()
 	ATestPlayerController* Con = Cast<ATestPlayerController>(GetController());
 	if (nullptr != Con)
 	{
-		Con->FCharacterToReload.Execute(); // Execute -> Delegate 실행.
+		if (Con->FCharacterToReload.IsBound())
+		{
+			Con->FCharacterToReload.Execute(); // Execute -> Delegate 실행.	
+		}
 	}
 }
 
