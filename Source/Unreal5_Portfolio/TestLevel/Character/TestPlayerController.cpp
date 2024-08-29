@@ -31,9 +31,11 @@ void ATestPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
-	FCharacterToReload.BindUObject(this, &ATestPlayerController::CallReload);
+	//FCharacterToReload.BindUObject(this, &ATestPlayerController::CallReload);
+	FCharacterToReload.BindUObject(this, &ATestPlayerController::BullitCountToHUD);
 	FCharacterToFaint.BindUObject(this, &ATestPlayerController::CallFaint);
-	FGetItemToWidget.BindUObject(this, &ATestPlayerController::CallGetItem);
+	//FGetItemToWidget.BindUObject(this, &ATestPlayerController::CallGetItem);
+	FGetItemToWidget.BindUObject(this, &ATestPlayerController::CallGetItemToWidget);
 }
 
 void ATestPlayerController::SetupInputComponent()

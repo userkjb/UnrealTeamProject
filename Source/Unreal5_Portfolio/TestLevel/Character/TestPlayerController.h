@@ -26,6 +26,7 @@ protected:
 	void BeginPlay() override;
 
 public:
+	// Delegate º¯¼ö
 	FDelegate_Reload FCharacterToReload;
 	FDelegate_Faint FCharacterToFaint;
 	FDelegate_GetItem FGetItemToWidget;
