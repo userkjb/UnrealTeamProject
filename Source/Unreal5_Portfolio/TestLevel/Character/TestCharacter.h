@@ -116,9 +116,9 @@ private: // 문제 발생 여지 있음 발생하면 그냥 지워야 함.
 	AActor* GetMapItemData = nullptr;
 
 	// 상체 정보
-	UPROPERTY()
+	UPROPERTY(Category = "Contents", Replicated, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class UPlayerAnimInstance* PlayerAnimInst = nullptr;
-	UPROPERTY()
+	UPROPERTY(Category = "Contents", Replicated, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class UPlayerAnimInstance* FPVPlayerAnimInst = nullptr;
 
 	UPROPERTY(Replicated, meta = (AllowPrivateAccess = "true"))
